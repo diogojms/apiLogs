@@ -1,0 +1,29 @@
+{
+  "name": "apilogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogojms/apiLogs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogojms/apiLogs/issues"
+  },
+  "homepage": "https://github.com/diogojms/apiLogs#readme",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mongoose": "^8.0.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.11.0"
+  }
+}
