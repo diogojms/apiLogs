@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 var bodyParser = require('body-parser');
-const Logs = require('./LoggerModel/loggerModel')
+const Logs = require('./Models/logs')
 const moment = require('moment')
 moment.locale("en")
 var amqp = require('amqplib/callback_api');
@@ -35,7 +35,7 @@ async function LogRegisto(message) {
       LogMoment
   })
 }
-
+console.log(`Connecting to RabbitMQ server: ${process.env.LOGS_URI}`);
 amqp.connect(`amqp://${process.env.LOGS_URI}`, function(error0, connection) {
     if (error0) {
         throw error0;
@@ -49,7 +49,7 @@ amqp.connect(`amqp://${process.env.LOGS_URI}`, function(error0, connection) {
         var queue = 'tasks';
 
         channel.assertQueue(queue, {
-            durable: false
+            durable: true
         });
 
         channel.consume(queue, function(msg) {
