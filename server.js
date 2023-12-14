@@ -17,7 +17,6 @@ mongoose.connect(uri).then(() => {
     console.error("Connection error", err);
 }) 
 
-
 // App
 const app = express()
 //app.use(bodyParser.json())
